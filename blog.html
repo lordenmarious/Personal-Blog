@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Read my latest blog posts about photography, travel, and daily experiences">
-    <title>Blog Posts - My Personal Blog</title>
+    <meta name="description" content="Read my latest blog posts about teaching, gaming, and more">
+    <title>Blog Posts - Ertuğrul Enis Can</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -27,36 +27,28 @@
     <main class="blog-container">
         <h1>Latest Posts</h1>
         
-        <div class="blog-filters">
-            <button class="filter-btn active" data-filter="all">All Posts</button>
-            <button class="filter-btn" data-filter="photography">Photography</button>
-            <button class="filter-btn" data-filter="travel">Travel</button>
-            <button class="filter-btn" data-filter="tech">Tech</button>
+        <div class="pagination">
+            <button class="pagination-btn" aria-label="Previous page">&lt;</button>
+            <span class="current-page">1</span>
+            <button class="pagination-btn" aria-label="Next page">&gt;</button>
         </div>
 
         <div class="blog-grid">
-            <article class="blog-post" data-category="photography">
+            <article class="blog-post">
                 <div class="post-image">
-                    <img data-src="https://via.placeholder.com/800x400" alt="Camera gear on a wooden table" loading="lazy">
+                    <img data-src="https://via.placeholder.com/800x400" alt="Blog post image" loading="lazy">
                 </div>
                 <div class="post-content">
                     <div class="post-meta">
                         <time datetime="2024-03-15">March 15, 2024</time>
                         <span class="read-time">5 min read</span>
                     </div>
-                    <h2>Essential Photography Gear for Beginners</h2>
-                    <p>Starting your photography journey? Here's the essential gear you need without breaking the bank...</p>
-                    <div class="post-tags">
-                        <span class="tag">Photography</span>
-                        <span class="tag">Gear</span>
-                    </div>
-                    <a href="#" class="read-more">Read More<span class="sr-only"> about Essential Photography Gear</span></a>
+                    <h2>Blog Post Title</h2>
+                    <p>Blog post excerpt goes here...</p>
+                    <a href="#" class="read-more">Read More<span class="sr-only"> about this post</span></a>
                 </div>
             </article>
-
-            <article class="blog-post" data-category="travel">
-                <!-- Similar structure for other blog posts -->
-            </article>
+            <!-- More blog posts -->
         </div>
 
         <div class="pagination">
@@ -65,34 +57,21 @@
             <button class="pagination-btn" aria-label="Next page">&gt;</button>
         </div>
 
-        <aside class="blog-sidebar">
-            <div class="search-widget">
-                <h2>Search Posts</h2>
-                <form class="search-form" role="search">
-                    <input type="search" placeholder="Search..." aria-label="Search blog posts">
-                    <button type="submit" aria-label="Submit search">
-                        <svg viewBox="0 0 24 24" class="search-icon">
-                            <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
-                        </svg>
-                    </button>
-                </form>
-            </div>
-
-            <div class="popular-posts">
-                <h2>Popular Posts</h2>
-                <ul>
-                    <li><a href="#">Top Photography Locations in the City</a></li>
-                    <li><a href="#">My Favorite Camera Settings</a></li>
-                    <li><a href="#">Travel Photography Tips</a></li>
-                </ul>
-            </div>
+        <aside class="popular-posts">
+            <h2>Popular Posts</h2>
+            <ul>
+                <li><a href="#">My Teaching Philosophy</a></li>
+                <li><a href="#">Gaming and Language Learning</a></li>
+                <li><a href="#">Music That Inspires Me</a></li>
+            </ul>
         </aside>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+        <p>&copy; 2024 Ertuğrul Enis Can. All rights reserved.</p>
     </footer>
 
     <script src="js/main.js"></script>
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
 </body>
 </html> 

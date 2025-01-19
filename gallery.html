@@ -31,31 +31,24 @@
     <main>
         <div class="gallery-header">
             <h1>Photo Gallery</h1>
-            <div class="gallery-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="nature">Nature</button>
-                <button class="filter-btn" data-filter="travel">Travel</button>
-                <button class="filter-btn" data-filter="urban">Urban</button>
-            </div>
         </div>
 
         <div class="gallery-grid">
-            <div class="gallery-item" data-category="nature">
-                <img data-src="https://via.placeholder.com/400x300" alt="Beautiful mountain landscape" loading="lazy">
+            <div class="gallery-item">
+                <img data-src="https://via.placeholder.com/400x300" alt="Beautiful landscape" loading="lazy">
                 <div class="gallery-caption">
                     <h3>Mountain Vista</h3>
                     <p>Captured during sunrise at the mountain peak</p>
                 </div>
             </div>
-            <!-- More gallery items with different categories -->
-            <div class="gallery-item" data-category="travel">
-                <img data-src="https://via.placeholder.com/400x300" alt="Historic city street" loading="lazy">
+            <div class="gallery-item">
+                <img data-src="https://via.placeholder.com/400x300" alt="City street" loading="lazy">
                 <div class="gallery-caption">
                     <h3>City Streets</h3>
                     <p>Walking through historic neighborhoods</p>
                 </div>
             </div>
-            <!-- Add more items as needed -->
+            <!-- Add more gallery items as needed -->
         </div>
 
         <div class="lightbox" role="dialog" aria-label="Image lightbox">
@@ -72,5 +65,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
 </body>
 </html> 
