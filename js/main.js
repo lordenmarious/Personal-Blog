@@ -57,40 +57,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Mobile Menu
         initMobileMenu() {
-            const menuToggle = document.querySelector('.menu-toggle');
+            const menuButton = document.querySelector('.menu-toggle');
             const navLinks = document.querySelector('.nav-links');
-            if (!menuToggle) return;
+            
+            if (!menuButton || !navLinks) return;
 
-            menuToggle.addEventListener('click', (e) => {
-                e.stopPropagation();
-                this.toggleMenu(menuToggle, navLinks);
-            });
-
-            // Close menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
-                    this.closeMenu(menuToggle, navLinks);
+            menuButton.addEventListener('click', () => {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                navLinks.classList.toggle('active');
+                
+                if (!isExpanded) {
+                    // Trap focus within menu when open
+                    navLinks.querySelector('a').focus();
                 }
             });
 
-            // Close menu on Escape
+            // Close menu on escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && navLinks.classList.contains('active')) {
-                    this.closeMenu(menuToggle, navLinks);
+                    menuButton.click();
+                    menuButton.focus();
                 }
             });
-        },
-
-        toggleMenu(toggle, nav) {
-            toggle.classList.toggle('active');
-            nav.classList.toggle('active');
-            toggle.setAttribute('aria-expanded', toggle.classList.contains('active'));
-        },
-
-        closeMenu(toggle, nav) {
-            toggle.classList.remove('active');
-            nav.classList.remove('active');
-            toggle.setAttribute('aria-expanded', 'false');
         },
 
         // Scroll Handling
