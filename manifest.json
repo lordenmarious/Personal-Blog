@@ -5,6 +5,7 @@
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#FF6B35",
+    "description": "Personal blog sharing experiences in teaching, gaming, and more",
     "icons": [
         {
             "src": "/images/favicon-32x32.png",
@@ -15,6 +16,18 @@
             "src": "/images/apple-touch-icon.png",
             "sizes": "180x180",
             "type": "image/png"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Blog Posts",
+            "url": "/blog.html",
+            "description": "View latest blog posts"
+        },
+        {
+            "name": "Gallery",
+            "url": "/gallery.html",
+            "description": "View photo gallery"
         }
     ]
 } 

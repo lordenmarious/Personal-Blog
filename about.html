@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Ertuğrul Enis Can - English Teacher and Creative Mind">
-    <title>About Me - Ertuğrul Enis Can</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Learn more about me - an English teacher passionate about innovative teaching and creative expression">
+    <title>About Me - My Personal Blog</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="images/profile-medium.webp" as="image">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <h2>My Blog</h2>
+                <h1>My Blog</h1>
             </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="about.html">About</a>
+                <a href="about.html" aria-current="page">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="contact.html">Contact</a>
@@ -26,15 +42,25 @@
 
     <main class="about-container">
         <article class="about-content">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3" 
-                 alt="Ertuğrul Enis Can - Professional headshot" 
-                 class="profile-image" 
-                 width="250" 
-                 height="250">
+            <figure class="profile-figure">
+                <img src="images/profile-small.webp"
+                     srcset="images/profile-small.webp 400w,
+                             images/profile-medium.webp 800w,
+                             images/profile-large.webp 1200w"
+                     sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            33vw"
+                     alt="Professional headshot of me smiling at the camera"
+                     width="250"
+                     height="250"
+                     loading="lazy">
+                <figcaption class="sr-only">Professional headshot photo</figcaption>
+            </figure>
+
             <h1>About Me</h1>
             
             <section class="bio">
-                <p class="intro">Hello! I'm Ertuğrul Enis Can, an enthusiastic English language teacher with a passion for learning, creativity, and connection.</p>
+                <p class="intro">Hello! I'm an enthusiastic English language teacher with a passion for learning, creativity, and connection.</p>
                 
                 <div class="bio-content">
                     <p>My teaching journey has been driven by a commitment to helping students unlock their potential through communication-focused methods and innovative technology.</p>
@@ -47,46 +73,47 @@
                 <p class="outro">Teaching, learning, gaming, and music are all integral parts of who I am, and they shape the way I connect with the world.</p>
             </section>
 
-            <section class="timeline">
-                <h2>Professional Journey</h2>
-                <div class="timeline-container">
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+            <section class="timeline" aria-labelledby="timeline-heading">
+                <h2 id="timeline-heading">Professional Journey</h2>
+                <ul class="timeline-container" role="list">
+                    <li class="timeline-item" role="listitem">
+                        <div class="timeline-dot" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <h3>2024</h3>
                             <p>Started personal blog to share teaching experiences and insights</p>
                         </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
+                    </li>
+                    <li class="timeline-item" role="listitem">
+                        <div class="timeline-dot" aria-hidden="true"></div>
                         <div class="timeline-content">
                             <h3>2023</h3>
                             <p>Developed innovative English teaching methodologies using technology</p>
                         </div>
-                    </div>
-                    <!-- Add more timeline items as needed -->
-                </div>
+                    </li>
+                </ul>
             </section>
 
-            <section class="interests-detailed">
-                <h2>My Interests In Detail</h2>
+            <section class="interests-detailed" aria-labelledby="interests-heading">
+                <h2 id="interests-heading">My Passions</h2>
                 
-                <div class="interest-card teaching-card">
-                    <div class="interest-icon teaching"></div>
-                    <h3>Teaching</h3>
-                    <p>I specialize in communicative language teaching, using technology and interactive methods to make learning engaging and effective. My approach focuses on real-world applications and student-centered learning.</p>
-                </div>
+                <div class="interests-grid" role="list">
+                    <div class="interest-card" role="listitem">
+                        <div class="interest-icon teaching" aria-hidden="true"></div>
+                        <h3>Teaching</h3>
+                        <p>I specialize in communicative language teaching, using technology and interactive methods to make learning engaging and effective. My approach focuses on real-world applications and student-centered learning.</p>
+                    </div>
 
-                <div class="interest-card gaming-card">
-                    <div class="interest-icon gaming"></div>
-                    <h3>Gaming</h3>
-                    <p>Gaming is both a hobby and a teaching tool for me. I particularly enjoy strategy games like Cities Skylines and story-rich experiences like The Witcher 3, which offer unique perspectives on problem-solving and narrative development.</p>
-                </div>
+                    <div class="interest-card" role="listitem">
+                        <div class="interest-icon gaming" aria-hidden="true"></div>
+                        <h3>Gaming</h3>
+                        <p>Gaming is both a hobby and a teaching tool for me. I particularly enjoy strategy games like Cities Skylines and story-rich experiences like The Witcher 3, which offer unique perspectives on problem-solving and narrative development.</p>
+                    </div>
 
-                <div class="interest-card music-card">
-                    <div class="interest-icon music"></div>
-                    <h3>Music</h3>
-                    <p>Music, especially Turkish rap and artists like Kayra & Farazi, helps me stay creative and focused. I often use music in my teaching to demonstrate language rhythm and cultural elements.</p>
+                    <div class="interest-card" role="listitem">
+                        <div class="interest-icon music" aria-hidden="true"></div>
+                        <h3>Music</h3>
+                        <p>Music, especially Turkish rap and artists like Kayra & Farazi, helps me stay creative and focused. I often use music in my teaching to demonstrate language rhythm and cultural elements.</p>
+                    </div>
                 </div>
             </section>
 
@@ -112,18 +139,18 @@
                 </div>
             </section>
 
-            <section class="favorites">
-                <h2>Current Favorites</h2>
-                <div class="favorites-grid">
-                    <div class="favorite-item">
-                        <h3>🎮 Games</h3>
+            <section class="favorites" aria-labelledby="favorites-heading">
+                <h2 id="favorites-heading">Current Favorites</h2>
+                <div class="favorites-grid" role="list">
+                    <div class="favorite-item" role="listitem">
+                        <h3><span class="favorite-icon" aria-hidden="true">🎮</span> Games</h3>
                         <ul>
                             <li>Cities Skylines</li>
                             <li>The Witcher 3</li>
                         </ul>
                     </div>
-                    <div class="favorite-item">
-                        <h3>🎵 Music</h3>
+                    <div class="favorite-item" role="listitem">
+                        <h3><span class="favorite-icon" aria-hidden="true">🎵</span> Music</h3>
                         <ul>
                             <li>Turkish Rap</li>
                             <li>Kayra & Farazi - Hayalet Islığı</li>
@@ -135,8 +162,19 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 Ertuğrul Enis Can. All rights reserved.</p>
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
     </footer>
+
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2v2m0 16v2M4 12H2m20 0h-2m-2.05-6.95L16.24 7.76M7.76 16.24l-1.71 1.71M7.76 7.76L6.05 6.05m10.19 10.19l1.71 1.71M12 17.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
 
     <script src="js/main.js"></script>
 </body>

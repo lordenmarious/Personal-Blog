@@ -1,14 +1,20 @@
-# Personal Blog
+# Personal Blog Website
 
-A personal blog website built with HTML, CSS, and JavaScript.
+A modern, accessible, and responsive personal blog website with dark mode support and PWA capabilities. :D
 
 ## Features
-- Responsive design
-- Dark mode support
-- Blog post filtering and search
-- Image gallery with lightbox
-- Contact form with validation
-- Performance optimized
+
+- 🌓 Dark mode with system preference detection
+- 📱 Fully responsive design
+- ♿ WCAG 2.1 compliant accessibility
+- 🚀 Performance optimized
+- 📦 PWA support with offline capabilities
+- 🖼️ Responsive images with WebP format
+- 🔍 Search functionality
+- 🏷️ Tag-based filtering
+- 📝 Contact form with validation
+
+## Project Structure
 
 ## Deployment
 This site is deployed using GitHub Pages. To deploy your own version:

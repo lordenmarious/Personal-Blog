@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Photo gallery showcasing my photography work and experiences">
+    <meta name="description" content="Photo gallery showcasing teaching moments, gaming setups, and creative projects">
     <title>Gallery - My Personal Blog</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 </head>
 <body>
     <nav class="navbar" role="navigation" aria-label="Main navigation">
@@ -28,37 +39,48 @@
         </div>
     </nav>
 
-    <main>
+    <main class="gallery-container">
         <div class="gallery-header">
             <h1>Photo Gallery</h1>
+            <div class="gallery-filters" role="group" aria-label="Filter gallery images">
+                <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" data-filter="teaching" aria-pressed="false">Teaching</button>
+                <button class="filter-btn" data-filter="gaming" aria-pressed="false">Gaming</button>
+                <button class="filter-btn" data-filter="events" aria-pressed="false">Events</button>
+            </div>
         </div>
 
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img data-src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3" 
-                     alt="Teaching moment" loading="lazy">
+        <div class="gallery-grid" role="list">
+            <div class="gallery-item" role="listitem" data-category="teaching">
+                <img src="images/gallery/teaching-small.webp"
+                     srcset="images/gallery/teaching-small.webp 400w,
+                             images/gallery/teaching-medium.webp 800w,
+                             images/gallery/teaching-large.webp 1200w"
+                     sizes="(max-width: 768px) 100vw,
+                            (max-width: 1200px) 50vw,
+                            33vw"
+                     alt="Interactive teaching session with students engaged in group work"
+                     loading="lazy">
                 <div class="gallery-caption">
-                    <h3>Teaching Moments</h3>
-                    <p>Engaging with students in the classroom</p>
+                    <h3>Interactive Learning</h3>
+                    <p>Students engaged in a collaborative language exercise</p>
+                    <span class="gallery-date">March 2024</span>
                 </div>
             </div>
-            <div class="gallery-item">
-                <img data-src="https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3" 
-                     alt="Gaming setup" loading="lazy">
-                <div class="gallery-caption">
-                    <h3>Gaming Setup</h3>
-                    <p>Where the gaming adventures happen</p>
-                </div>
-            </div>
-            <!-- Add more gallery items as needed -->
+            <!-- More gallery items -->
         </div>
 
-        <div class="lightbox" role="dialog" aria-label="Image lightbox">
+        <div class="lightbox" role="dialog" aria-label="Image lightbox" aria-hidden="true">
             <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
-            <img src="" alt="" class="lightbox-image">
-            <div class="lightbox-caption"></div>
-            <button class="lightbox-prev" aria-label="Previous image">&lt;</button>
-            <button class="lightbox-next" aria-label="Next image">&gt;</button>
+            <div class="lightbox-content">
+                <img src="" alt="" class="lightbox-image">
+                <div class="lightbox-caption"></div>
+                <div class="lightbox-navigation">
+                    <button class="lightbox-prev" aria-label="Previous image">&lt;</button>
+                    <span class="image-counter" aria-live="polite"></span>
+                    <button class="lightbox-next" aria-label="Next image">&gt;</button>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -66,7 +88,17 @@
         <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
     </footer>
 
-    <script src="js/main.js"></script>
+    <button class="dark-mode-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2v2m0 16v2M4 12H2m20 0h-2m-2.05-6.95L16.24 7.76M7.76 16.24l-1.71 1.71M7.76 7.76L6.05 6.05m10.19 10.19l1.71 1.71M12 17.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+    </button>
+
     <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
+
+    <script src="js/main.js"></script>
 </body>
 </html> 
