@@ -4,7 +4,10 @@ const urlsToCache = [
     './index.html',
     './css/style.css',
     './js/main.js',
-    './images/professional-bg.jpg'
+    './images/professional-bg.jpg',
+    './images/favicon-16x16.png',
+    './images/favicon-32x32.png',
+    './images/apple-touch-icon.png'
 ];
 
 self.addEventListener('install', event => {
