@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About me - Personal blog and photography">
     <title>About Me - My Personal Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
                 <h2>My Blog</h2>
@@ -23,14 +24,39 @@
         </div>
     </nav>
 
-    <div class="blog-container">
-        <div class="blog-post">
-            <img src="https://via.placeholder.com/200" alt="Profile Photo" style="border-radius: 50%; margin-bottom: 2rem;">
+    <main class="about-container">
+        <article class="about-content">
+            <img src="images/profile.jpg" alt="Author's portrait" class="profile-image" width="200" height="200">
             <h1>About Me</h1>
-            <p>Hello! I'm a passionate blogger and photographer who loves sharing stories and capturing moments. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-        </div>
-    </div>
+            
+            <section class="bio">
+                <h2>My Journey</h2>
+                <p>Hello! I'm [Your Name], a passionate writer and photographer based in [Location]. With a background in [Field], I've spent the last [X] years exploring the intersection of storytelling and visual arts.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>2024</h3>
+                        <p>Started this blog to share my experiences and photography</p>
+                    </div>
+                    <!-- Add more timeline items -->
+                </div>
+            </section>
+
+            <section class="interests">
+                <h2>What I Love</h2>
+                <ul class="interests-grid">
+                    <li>📷 Photography</li>
+                    <li>✍️ Writing</li>
+                    <li>🌍 Travel</li>
+                    <li>📚 Reading</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

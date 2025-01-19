@@ -3,46 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Photo gallery showcasing my photography work and experiences">
     <title>Gallery - My Personal Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <h2>My Blog</h2>
+                <h1>My Blog</h1>
             </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
             <div class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
-                <a href="gallery.html">Gallery</a>
+                <a href="gallery.html" aria-current="page">Gallery</a>
                 <a href="contact.html">Contact</a>
             </div>
         </div>
     </nav>
 
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 1">
+    <main>
+        <div class="gallery-header">
+            <h1>Photo Gallery</h1>
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="nature">Nature</button>
+                <button class="filter-btn" data-filter="travel">Travel</button>
+                <button class="filter-btn" data-filter="urban">Urban</button>
+            </div>
         </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 2">
+
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="nature">
+                <img data-src="https://via.placeholder.com/400x300" alt="Beautiful mountain landscape" loading="lazy">
+                <div class="gallery-caption">
+                    <h3>Mountain Vista</h3>
+                    <p>Captured during sunrise at the mountain peak</p>
+                </div>
+            </div>
+            <!-- More gallery items with different categories -->
+            <div class="gallery-item" data-category="travel">
+                <img data-src="https://via.placeholder.com/400x300" alt="Historic city street" loading="lazy">
+                <div class="gallery-caption">
+                    <h3>City Streets</h3>
+                    <p>Walking through historic neighborhoods</p>
+                </div>
+            </div>
+            <!-- Add more items as needed -->
         </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 3">
+
+        <div class="lightbox" role="dialog" aria-label="Image lightbox">
+            <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+            <img src="" alt="" class="lightbox-image">
+            <div class="lightbox-caption"></div>
+            <button class="lightbox-prev" aria-label="Previous image">&lt;</button>
+            <button class="lightbox-next" aria-label="Next image">&gt;</button>
         </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 4">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 5">
-        </div>
-        <div class="gallery-item">
-            <img src="https://via.placeholder.com/400x300" alt="Gallery Image 6">
-        </div>
-    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>

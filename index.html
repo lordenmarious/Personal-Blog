@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal blog sharing daily experiences and photos">
     <title>My Personal Blog</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
             <div class="logo">
-                <h2>My Blog</h2>
+                <h1>My Blog</h1>
             </div>
+            <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger"></span>
+            </button>
             <div class="nav-links">
-                <a href="index.html">Home</a>
+                <a href="index.html" aria-current="page">Home</a>
                 <a href="about.html">About</a>
                 <a href="blog.html">Blog</a>
                 <a href="gallery.html">Gallery</a>
@@ -23,12 +28,26 @@
         </div>
     </nav>
 
-    <section class="hero">
-        <h1>Welcome to My Personal Blog</h1>
-        <p>A place where I share my daily experiences and photos</p>
-        <a href="blog.html" class="cta-button">Read My Blog</a>
-    </section>
+    <main>
+        <section class="hero" role="banner">
+            <h2>Welcome to My Personal Blog</h2>
+            <p>A place where I share my daily experiences and photos</p>
+            <a href="blog.html" class="cta-button" aria-label="Read my blog posts">Read My Blog</a>
+        </section>
+
+        <section class="featured-posts">
+            <h2>Latest Posts</h2>
+            <div class="post-grid">
+                <!-- Featured posts will be dynamically loaded -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+    </footer>
 
     <script src="js/main.js"></script>
+    <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">↑</button>
 </body>
 </html> 
