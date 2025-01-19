@@ -127,27 +127,37 @@ const initContactForm = () => {
 // Initialize contact form if it exists
 document.addEventListener('DOMContentLoaded', initContactForm);
 
-// Mobile menu functionality
+// Enhanced Mobile Menu
 const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
         menuToggle.classList.toggle('active');
         navLinks.classList.toggle('active');
         menuToggle.setAttribute('aria-expanded', 
             menuToggle.classList.contains('active'));
     });
-}
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
-        menuToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-    }
-});
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.navbar') && navLinks.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close menu when pressing Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+}
 
 // Add smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -416,4 +426,125 @@ if (scrollTopButton) {
             behavior: 'smooth'
         });
     });
-} 
+}
+
+// Blog search and filter functionality
+const initBlogFeatures = () => {
+    const searchInput = document.getElementById('blogSearch');
+    const tags = document.querySelectorAll('.tag');
+    const posts = document.querySelectorAll('.blog-post');
+
+    if (!searchInput) return;
+
+    // Search functionality
+    searchInput.addEventListener('input', (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        filterPosts(searchTerm, getCurrentTag());
+    });
+
+    // Tag filtering
+    tags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            tags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            filterPosts(searchInput.value.toLowerCase(), tag.dataset.tag);
+        });
+    });
+
+    const getCurrentTag = () => {
+        return document.querySelector('.tag.active').dataset.tag;
+    };
+
+    const filterPosts = (searchTerm, activeTag) => {
+        posts.forEach(post => {
+            const postText = post.textContent.toLowerCase();
+            const postTags = post.dataset.tags.split(' ');
+            const matchesSearch = postText.includes(searchTerm);
+            const matchesTag = activeTag === 'all' || postTags.includes(activeTag);
+
+            if (matchesSearch && matchesTag) {
+                post.style.display = 'block';
+                post.style.animation = 'fadeIn 0.5s ease forwards';
+            } else {
+                post.style.display = 'none';
+            }
+        });
+    };
+};
+
+// Initialize blog features
+document.addEventListener('DOMContentLoaded', initBlogFeatures);
+
+// Dark mode toggle functionality
+const initDarkMode = () => {
+    const darkModeToggle = document.createElement('button');
+    darkModeToggle.className = 'dark-mode-toggle';
+    darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
+    darkModeToggle.innerHTML = `
+        <svg class="sun-icon" viewBox="0 0 24 24">
+            <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-12a1 1 0 0 0 1-1V2a1 1 0 0 0-2 0v2a1 1 0 0 0 1 1zm0 14a1 1 0 0 0-1 1v2a1 1 0 1 0 2 0v-2a1 1 0 0 0-1-1zm10-7h-2a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2zM4 12a1 1 0 0 0-1-1H1a1 1 0 1 0 0 2h2a1 1 0 0 0 1-1z"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24">
+            <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446A9 9 0 1 1 12 3z"/>
+        </svg>
+    `;
+
+    document.body.appendChild(darkModeToggle);
+
+    const updateDarkMode = (isDark) => {
+        document.documentElement.classList.toggle('dark-mode', isDark);
+        localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+    };
+
+    // Check for saved user preference
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    updateDarkMode(savedDarkMode);
+
+    darkModeToggle.addEventListener('click', () => {
+        updateDarkMode(!document.documentElement.classList.contains('dark-mode'));
+    });
+};
+
+document.addEventListener('DOMContentLoaded', initDarkMode);
+
+// Performance optimizations
+const optimizePerformance = () => {
+    // Debounce scroll events
+    const debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    };
+
+    // Optimize scroll handlers
+    const scrollHandler = debounce(() => {
+        const scrollTop = window.pageYOffset;
+        
+        // Handle scroll-to-top button
+        if (scrollTopButton) {
+            scrollTopButton.classList.toggle('visible', scrollTop > 500);
+        }
+        
+        // Handle navbar background
+        if (navbar) {
+            navbar.classList.toggle('scrolled', scrollTop > 50);
+        }
+    }, 16);
+
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+
+    // Optimize images
+    document.querySelectorAll('img').forEach(img => {
+        if (img.getAttribute('loading') !== 'lazy') {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+};
+
+document.addEventListener('DOMContentLoaded', optimizePerformance); 
