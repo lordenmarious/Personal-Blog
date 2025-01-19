@@ -68,9 +68,8 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 2rem;
-    animation: fadeIn 1s ease-in;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-                url('../images/hero-bg.jpg') center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../images/professional-bg.jpg') center/cover;
     color: white;
 }
 
@@ -113,8 +112,7 @@ body {
 }
 
 .blog-grid {
-    display: grid;
-    gap: 2rem;
+    margin: 2rem 0;
 }
 
 .blog-post {
@@ -228,21 +226,26 @@ body {
 }
 
 .popular-posts {
-    background: white;
-    padding: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--background-color);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+.popular-posts h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
 .popular-posts ul {
     list-style: none;
-    margin-top: 1rem;
 }
 
 .popular-posts li {
     margin-bottom: 1rem;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .popular-posts li:last-child {
@@ -895,16 +898,21 @@ body {
         background-color: #2d2d2d;
     }
 
+    .popular-posts h2,
     .popular-posts a {
         color: #f0f0f0;
     }
 
     .popular-posts li {
-        border-bottom-color: #444;
+        border-bottom-color: rgba(255, 255, 255, 0.1);
     }
 
-    .popular-posts a:hover {
-        color: var(--primary-color);
+    .navbar {
+        background-color: rgba(26, 26, 26, 0.95);
+    }
+    
+    .logo h1, .logo h2 {
+        color: #f0f0f0;
     }
 }
 
@@ -1006,4 +1014,73 @@ body {
     position: absolute;
     left: 0;
     color: var(--primary-color);
+}
+
+/* Bio Content Styling */
+.bio-content {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.bio-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.bio-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* 3D Interest Icons */
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.interest-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.interest-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.interest-icon:hover {
+    transform: translateY(-5px);
+}
+
+.interest-icon.teaching {
+    background-image: url('../images/icons/teaching-3d.png');
+}
+
+.interest-icon.gaming {
+    background-image: url('../images/icons/gaming-3d.png');
+}
+
+.interest-icon.music {
+    background-image: url('../images/icons/music-3d.png');
+}
+
+.interest-icon.learning {
+    background-image: url('../images/icons/learning-3d.png');
+}
+
+.interest-item span {
+    font-weight: 500;
+    color: var(--text-color);
 } 
