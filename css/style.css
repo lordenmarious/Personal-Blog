@@ -1065,22 +1065,30 @@ body {
 }
 
 .interest-icon.teaching {
-    background-image: url('../images/icons/teaching-3d.png');
+    background-image: url('https://cdn3d.iconscout.com/3d/premium/thumb/online-teaching-6851633-5616851.png');
 }
 
 .interest-icon.gaming {
-    background-image: url('../images/icons/gaming-3d.png');
+    background-image: url('https://cdn3d.iconscout.com/3d/premium/thumb/gaming-controller-5706554-4779160.png');
 }
 
 .interest-icon.music {
-    background-image: url('../images/icons/music-3d.png');
+    background-image: url('https://cdn3d.iconscout.com/3d/premium/thumb/headphone-5706553-4779159.png');
 }
 
 .interest-icon.learning {
-    background-image: url('../images/icons/learning-3d.png');
+    background-image: url('https://cdn3d.iconscout.com/3d/premium/thumb/graduation-cap-5706552-4779158.png');
 }
 
 .interest-item span {
     font-weight: 500;
     color: var(--text-color);
+}
+
+/* Add favicon links */
+/* Use Material Icons for favicon as a temporary solution */
+.favicon-icon {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    color: var(--primary-color);
 } 

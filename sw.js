@@ -1,10 +1,10 @@
 const CACHE_NAME = 'blog-cache-v1';
 const urlsToCache = [
-    '/',
-    '/index.html',
-    '/css/style.css',
-    '/js/main.js',
-    '/images/hero-bg.jpg'
+    './',
+    './index.html',
+    './css/style.css',
+    './js/main.js',
+    './images/professional-bg.jpg'
 ];
 
 self.addEventListener('install', event => {
