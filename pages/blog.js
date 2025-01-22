@@ -28,6 +28,7 @@ export default function Blog() {
       <Head>
         <title>Blog Posts | Personal Blog</title>
         <meta name="description" content="Read my latest blog posts" />
+        <link rel="canonical" href={`${process.env.NEXT_PUBLIC_BASE_URL}/blog`} />
       </Head>
 
       <main className="main">

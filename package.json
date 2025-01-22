@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "export": "next export",
+    "deploy": "next build && next export"
+  }
+} 
