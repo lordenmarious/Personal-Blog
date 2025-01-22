@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Posts - My Personal Blog</title>
+    <title>Blog Posts</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <nav class="navigation">
@@ -15,37 +16,26 @@
 
     <main class="container">
         <h1>Blog Posts</h1>
-
-        <!-- Blog Post Template - Copy this section to add a new post -->
-        <article class="blog-post">
-            <h2>Your Post Title</h2>
-            <div class="post-meta">
-                <span class="date">March 21, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Your post content goes here. You can write multiple paragraphs.</p>
-                
-                <p>You can add more paragraphs as needed.</p>
-            </div>
-        </article>
-        <!-- End of Blog Post Template -->
-
-        <!-- Example of an actual blog post -->
-        <article class="blog-post">
-            <h2>Getting Started with Web Development</h2>
-            <div class="post-meta">
-                <span class="date">March 20, 2024</span>
-            </div>
-            <div class="post-content">
-                <p>Today marks the beginning of my web development journey. I've started learning HTML and CSS, and I'm excited to share my progress.</p>
-                
-                <p>The first steps involved understanding basic HTML structure and CSS styling. It's amazing how these technologies work together to create beautiful websites.</p>
-            </div>
-        </article>
+        
+        <div class="post-grid">
+            <!-- Each post card is a link to the full post -->
+            <a href="posts/getting-started.html" class="post-card">
+                <div class="post-content">
+                    <span class="post-date">March 20, 2024</span>
+                    <h2>Getting Started with Web Development</h2>
+                    <p class="post-excerpt">
+                        Today marks the beginning of my web development journey. I've started learning HTML and CSS, and I'm excited to share my progress.
+                    </p>
+                    <span class="read-more">Read More →</span>
+                </div>
+            </a>
+            
+            <!-- Add more post cards as needed -->
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Personal Blog. All rights reserved.</p>
+        <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
 </body>
 </html> 

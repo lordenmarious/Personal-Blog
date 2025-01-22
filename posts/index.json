@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "title": "A Teacher's Life: Reflecting on Growth",
+      "date": "2024-03-23",
+      "slug": "teachers-life-reflecting-growth",
+      "excerpt": "Day 3 started off a bit differently than the others. Maybe it's because by this point in the week, I've settled into a rhythm..."
+    },
+    {
+      "title": "In the Trenches: Teaching Through the Unexpected",
+      "date": "2024-03-22",
+      "slug": "teaching-through-unexpected",
+      "excerpt": "When you sign up to be a teacher, you know there will be challenges, but there are some things you can never predict. On Day 2, I'm reminded once again..."
+    },
+    {
+      "title": "A Teacher's Day: Embracing the Challenge",
+      "date": "2024-03-21",
+      "slug": "teachers-day-embracing-challenge",
+      "excerpt": "As a teacher, the first day of a new week is always both exciting and challenging. There's an underlying sense of anticipation, a mix of nervous energy and excitement..."
+    }
+  ]
+} 

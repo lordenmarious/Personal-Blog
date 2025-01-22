@@ -101,12 +101,34 @@ footer {
 
 /* Blog posts styling */
 .blog-post {
-    background: white;
+    max-width: 720px;
+    margin: 0 auto;
     padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
+    background: white;
+    border-radius: 12px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border-left: 4px solid #3498db;
+}
+
+.post-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.post-header h1 {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post .post-date {
+    color: #666;
+    font-size: 1rem;
+}
+
+.blog-post .post-content {
+    line-height: 1.8;
+}
+
+.blog-post p {
+    margin-bottom: 1.5rem;
 }
 
 .post-meta {
@@ -118,12 +140,33 @@ footer {
 }
 
 .post-content {
-    color: #2c3e50;
+    font-size: 1.1rem;
     line-height: 1.8;
+    color: #2c3e50;
 }
 
 .post-content p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-content em {
+    color: #34495e;
+    font-style: italic;
+}
+
+.post-content h2 {
+    margin: 2rem 0 1rem;
+    color: #2c3e50;
+    font-size: 1.8rem;
+}
+
+.post-content ul, 
+.post-content ol {
+    margin: 1rem 0 1.5rem 2rem;
+}
+
+.post-content li {
+    margin-bottom: 0.5rem;
 }
 
 .date {
@@ -161,6 +204,13 @@ footer {
 
 .post-card:hover .post-overlay {
     opacity: 1;
+}
+
+/* Add a subtle separator between posts in the list */
+.post-card:not(:last-child) {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 @media (prefers-color-scheme: dark) {
