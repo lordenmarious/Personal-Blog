@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Posts</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <nav class="navigation">
@@ -17,20 +16,46 @@
     <main class="container">
         <h1>Blog Posts</h1>
         
-        <div class="post-grid">
-            <!-- Each post card is a link to the full post -->
-            <a href="posts/getting-started.html" class="post-card">
-                <div class="post-content">
-                    <span class="post-date">March 20, 2024</span>
-                    <h2>Getting Started with Web Development</h2>
-                    <p class="post-excerpt">
-                        Today marks the beginning of my web development journey. I've started learning HTML and CSS, and I'm excited to share my progress.
-                    </p>
-                    <span class="read-more">Read More →</span>
-                </div>
-            </a>
-            
-            <!-- Add more post cards as needed -->
+        <div class="blog-list">
+            <!-- Teachers Life Post -->
+            <article class="blog-preview">
+                <h2><a href="posts/teachers-life-reflecting-growth.html">A Teacher's Life: Reflecting on Growth</a></h2>
+                <time class="post-date">March 23, 2024</time>
+                <p class="post-excerpt">
+                    Day 3 started off a bit differently than the others. Maybe it's because by this point in the week, I've settled into a rhythm...
+                </p>
+                <a href="posts/teachers-life-reflecting-growth.html" class="read-more">Read More →</a>
+            </article>
+
+            <!-- Teaching Through Unexpected Post -->
+            <article class="blog-preview">
+                <h2><a href="posts/teaching-through-unexpected.html">In the Trenches: Teaching Through the Unexpected</a></h2>
+                <time class="post-date">March 22, 2024</time>
+                <p class="post-excerpt">
+                    When you sign up to be a teacher, you know there will be challenges, but there are some things you can never predict...
+                </p>
+                <a href="posts/teaching-through-unexpected.html" class="read-more">Read More →</a>
+            </article>
+
+            <!-- Teachers Day Post -->
+            <article class="blog-preview">
+                <h2><a href="posts/teachers-day-embracing-challenge.html">A Teacher's Day: Embracing the Challenge</a></h2>
+                <time class="post-date">March 21, 2024</time>
+                <p class="post-excerpt">
+                    As a teacher, the first day of a new week is always both exciting and challenging. There's an underlying sense of anticipation...
+                </p>
+                <a href="posts/teachers-day-embracing-challenge.html" class="read-more">Read More →</a>
+            </article>
+
+            <!-- Getting Started Post -->
+            <article class="blog-preview">
+                <h2><a href="posts/getting-started.html">Getting Started with Web Development</a></h2>
+                <time class="post-date">March 20, 2024</time>
+                <p class="post-excerpt">
+                    Today marks the beginning of my web development journey. I've started learning HTML and CSS, and I'm excited to share my progress.
+                </p>
+                <a href="posts/getting-started.html" class="read-more">Read More →</a>
+            </article>
         </div>
     </main>
 

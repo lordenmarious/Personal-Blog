@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <nav class="navigation">
@@ -14,46 +15,85 @@
     </nav>
 
     <main class="container">
-        <h1>Contact Me</h1>
-        
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-        
-        <div class="contact-info">
-            <p>You can reach me at:</p>
-            <ul>
-                <li>Email: your.email@example.com</li>
-                <li>Twitter: @yourhandle</li>
-                <li>GitHub: yourusername</li>
-            </ul>
-        </div>
+        <div class="contact-wrapper">
+            <section class="contact-form-section">
+                <h1>Get in Touch</h1>
+                <p class="contact-intro">Have a question or want to work together? I'd love to hear from you!</p>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required 
+                               placeholder="Your name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required 
+                               placeholder="your.email@example.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required 
+                               placeholder="What's this about?">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required 
+                                  placeholder="Your message here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </section>
 
-        <div class="social-links">
-            <a href="#" class="social-icon">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-icon">
-                <i class="fab fa-linkedin"></i>
-            </a>
+            <section class="contact-info-section">
+                <div class="contact-card">
+                    <h2>Connect With Me</h2>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div class="method-details">
+                                <h3>Email</h3>
+                                <p>your.email@example.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-twitter"></i>
+                            <div class="method-details">
+                                <h3>Twitter</h3>
+                                <p>@yourhandle</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <i class="fab fa-github"></i>
+                            <div class="method-details">
+                                <h3>GitHub</h3>
+                                <p>yourusername</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-icon" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
