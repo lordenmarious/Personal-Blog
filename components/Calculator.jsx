@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const Calculator = () => {
+  console.log('Calculator component rendered');
   const [display, setDisplay] = useState('0');
   const [equation, setEquation] = useState('');
 
